@@ -1,0 +1,57 @@
+# Analisis Masalah
+
+**Studi Kasus 09: Sistem Pemeriksaan Anggaran Kegiatan Mahasiswa**
+
+## 1. Latar Belakang
+Organisasi mahasiswa menyusun anggaran sebelum kegiatan berlangsung. Setelah
+kegiatan, pengeluaran sebenarnya sering berbeda dari rencana. Pemeriksaan
+manual memakan waktu dan rawan salah hitung, sehingga dibutuhkan program yang
+dapat mengevaluasi tiap komponen anggaran secara otomatis.
+
+## 2. Rumusan Masalah
+1. Bagaimana menentukan status tiap komponen (Hemat, Tepat, Melebihi anggaran)?
+2. Bagaimana menghitung persentase penyimpangan dari anggaran rencana?
+3. Bagaimana menentukan tingkat keseriusan kelebihan (Perlu Evaluasi / Peringatan)?
+4. Bagaimana menolak input yang tidak valid tanpa menghentikan program?
+5. Bagaimana memproses banyak komponen secara berulang?
+
+## 3. Tujuan dan Pengguna
+**Tujuan:** membuat program console yang mengevaluasi realisasi anggaran
+per komponen dan menampilkan rincian hasilnya.
+
+**Pengguna:** bendahara atau panitia organisasi mahasiswa.
+
+## 4. Ketentuan dan Batasan
+| No | Ketentuan |
+|---|---|
+| 1 | Realisasi < rencana: Hemat |
+| 2 | Realisasi = rencana: Tepat |
+| 3 | Realisasi > rencana: Melebihi anggaran |
+| 4 | Kelebihan sampai 10%: Perlu Evaluasi |
+| 5 | Kelebihan lebih dari 10%: Peringatan |
+| 6 | Anggaran dan realisasi tidak boleh negatif |
+| 7 | Persentase penyimpangan dihitung dari anggaran rencana |
+
+Batasan teknis: program berjalan di console, tanpa array, class, database,
+GUI, atau library eksternal; memakai perulangan dan pilihan mengulang/mengakhiri.
+
+## 5. Input-Process-Output (Modul A)
+| Input | Proses | Output |
+|---|---|---|
+| Nama komponen | Validasi nilai tidak negatif | Nama komponen |
+| Anggaran rencana | Hitung selisih = realisasi - rencana | Selisih (Rp) |
+| Realisasi | Hitung persentase = selisih / rencana x 100 | Persentase penyimpangan |
+| Pilihan lanjut/berhenti | Tentukan status dan keterangan | Status dan keterangan |
+| | Ulangi sampai pengguna berhenti | Rincian per komponen |
+
+## 6. Variabel dan Tipe Data (Modul A)
+| Variabel | Tipe data | Nilai awal | Kegunaan |
+|---|---|---|---|
+| namaKomponen | string | "" | Nama komponen |
+| anggaranRencana | double | 0 | Anggaran yang direncanakan |
+| realisasi | double | 0 | Pengeluaran sebenarnya |
+| selisih | double | 0 | realisasi - anggaranRencana |
+| persenPenyimpangan | double | 0 | Penyimpangan terhadap rencana (%) |
+| status | string | "" | Hemat / Tepat / Melebihi anggaran |
+| keterangan | string | "" | Perlu Evaluasi / Peringatan |
+| pilihan | char | 'y' | Lanjut atau berhenti |
